@@ -2,40 +2,38 @@ import { Form, Formik } from 'formik';
 
 import { Button, SelectField, InputField } from '../';
 
-import { initialState, options, validationSchema } from './config';
+import { validationSchema } from './config';
 
-export const FormMonthlyFinancials = ({}) => {
+export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
   return (
     <Formik
+      onSubmit={onSubmit}
       validateOnBlur={false}
       validateOnChange={true}
       validateOnMount={false}
       initialValues={initialState}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
-        console.log(values);
-      }}
     >
-      <Form className="flex flex-col w-full gap-5 px-2 py-3 pb-5 rounded bg-zinc-300">
+      <Form className="flex flex-col w-full gap-5 px-2 py-5 rounded bg-zinc-300">
         <h1 className="text-center text-md md:text-xl xl:text-2xl font-kode text-zinc-900">
           Set expenses for the month
         </h1>
         <div className="flex items-start justify-between gap-2">
           <SelectField
             name="month"
-            placeholder="choose month"
             options={options}
+            placeholder="choose month"
           />
           <InputField
+            type="number"
             name="expenses"
             className="max-w-[35%]"
-            type="number"
             placeholder="expenses UAH"
           />
           <InputField
+            type="number"
             name="revenues"
             className="max-w-[35%]"
-            type="number"
             placeholder="revenues UAH"
           />
         </div>

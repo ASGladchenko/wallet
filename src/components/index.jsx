@@ -1,6 +1,6 @@
 export { Button } from './button';
 export { Container } from './container';
-export { DetalizedBalance } from './detalized-balance';
+export { DetailedBalance } from './detailed-balance';
 export { ExchangeRate } from './exchange-rate';
 export { FormMonthlyFinancials } from './form-monthly-financials';
 export { Greeting } from './greeting';
