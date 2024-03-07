@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import {
+  Summary,
   Greeting,
   Container,
   ExchangeRate,
@@ -36,6 +37,12 @@ export const Dashboard = ({}) => {
             />
           </div>
         </div>
+
+        <Summary
+          usd={data?.usd?.rate}
+          eur={data?.eur?.rate}
+          filledMonth={filledMonth}
+        />
 
         <DetailedBalance filledMonth={filledMonth} />
       </Container>

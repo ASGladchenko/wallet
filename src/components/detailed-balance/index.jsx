@@ -18,7 +18,7 @@ export const DetailedBalance = ({ filledMonth }) => {
 
       <Link
         to={routes.dashboard.create}
-        className="flex self-end gap-3 pb-5 ml-auto mr-5 text-black transition-all duration-300 max-w-max hover:text-green-800"
+        className="flex self-end gap-3 p-2 mb-5 ml-auto text-black transition-all duration-300 border rounded-md hover:border-green-800 max-w-max hover:text-green-800 border-zinc-900"
       >
         <span className="text-xl">Create</span>
         <Create width={32} height={32} />

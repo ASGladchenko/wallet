@@ -13,4 +13,5 @@ export { Logo } from './logo';
 export { ProtectedRoute } from './protected-route';
 export { Select } from './select';
 export { SelectField } from './select-field';
+export { Summary } from './summary';
 export { UnProtectedRoute } from './unprotected-route';

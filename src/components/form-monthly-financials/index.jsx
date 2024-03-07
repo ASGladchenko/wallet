@@ -26,15 +26,16 @@ export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
           />
           <InputField
             type="number"
-            name="expenses"
-            className="max-w-[35%]"
-            placeholder="expenses UAH"
-          />
-          <InputField
-            type="number"
             name="revenues"
             className="max-w-[35%]"
             placeholder="revenues UAH"
+          />
+
+          <InputField
+            type="number"
+            name="expenses"
+            className="max-w-[35%]"
+            placeholder="expenses UAH"
           />
         </div>
         <Button text="Added" type="submit" className="max-w-[30%] self-end" />
