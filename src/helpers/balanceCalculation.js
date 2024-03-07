@@ -3,8 +3,14 @@ export const balanceCalculation = ({
   rateEUR,
   revenues,
   expenses,
-}) => ({
-  balanceUAH: revenues - expenses,
-  balanceUSD: rateUSD ? revenues - expenses / rateUSD : 0,
-  balanceEUR: rateEUR ? revenues - expenses / rateEUR : 0,
-});
+}) => {
+  const balance = revenues - expenses;
+  const usd = balance / rateUSD;
+  const eur = balance / rateEUR;
+
+  return {
+    balanceUAH: balance,
+    balanceUSD: rateUSD ? usd : 0,
+    balanceEUR: rateEUR ? eur : 0,
+  };
+};

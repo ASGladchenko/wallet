@@ -5,6 +5,8 @@ import Edit from '../../../assets/edit.svg?react';
 import Delete from '../../../assets/delete.svg?react';
 import { deleteMonth } from '../../../store/filled-months';
 import { balanceCalculation } from '../../../helpers';
+import { getStyles } from './style';
+import clsx from 'clsx';
 
 export const BalanceMonth = ({
   eur,
@@ -22,50 +24,52 @@ export const BalanceMonth = ({
     revenues: revenues,
   });
 
+  const { main, editDelete, link, deleteBtn, row, maxW } = getStyles();
+
   const onDelete = () => {
     dispatch(deleteMonth(month));
   };
 
   return (
-    <tr className="flex w-full h-[32px] first:border-t border-b border-zinc-900">
-      <td className="w-full max-w-[80px] first:border-l border-r border-zinc-900">
-        {number}
-      </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
-        {month}
-      </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
-        {revenues}
-      </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
-        {expenses}
-      </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
+    <tr className={row}>
+      <td className={`${main} ${maxW}`}>{number}</td>
+      <td className={main}>{month}</td>
+      <td className={main}>{revenues}</td>
+      <td className={main}>{expenses}</td>
+      <td
+        className={clsx(main, {
+          'text-rose-600': balanceUAH < 0,
+        })}
+      >
         {balanceUAH}
       </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
+      <td
+        className={clsx(main, {
+          'text-rose-600': balanceUSD < 0,
+        })}
+      >
         {balanceUSD}
       </td>
-      <td className="w-full border-r first:border-l border-zinc-900">
+      <td
+        className={clsx(main, {
+          'text-rose-600': balanceEUR < 0,
+        })}
+      >
         {balanceEUR}
       </td>
-      <th className="w-full max-w-[80px] flex items-center justify-center first:border-l border-r border-zinc-900">
+      <td className={editDelete}>
         <Link to={`edit/${month.toLowerCase()}`} className="flex">
-          <Edit
-            width={24}
-            height={32}
-            className="text-black transition-all duration-300 cursor-pointer hover:text-green-800"
-          />
+          <Edit width={24} height={32} className={link} />
         </Link>
-      </th>
-      <th className="w-full max-w-[80px] flex items-center justify-center first:border-l border-r border-zinc-900">
+      </td>
+      <td className={editDelete}>
         <Delete
           width={24}
           height={32}
           onClick={onDelete}
-          className="text-black transition-all duration-300 cursor-pointer hover:text-rose-500"
+          className={deleteBtn}
         />
-      </th>
+      </td>
     </tr>
   );
 };
