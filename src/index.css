@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply bg-zinc-800;
+}
+
+.scroll::-webkit-scrollbar {
+  @apply w-[9px];
+}
+
+.scroll::-webkit-scrollbar-track {
+  @apply bg-zinc-300;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  @apply border-2 border-transparent border-solid lg:border-4 bg-zinc-900 rounded-xl bg-clip-content;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  @apply border-2 bg-zinc-900;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
