@@ -4,19 +4,21 @@ import {
   Greeting,
   Container,
   ExchangeRate,
-  FormMonthlyFinancials,
-  Loader,
+  DetailedBalance,
 } from '../../components';
 import { useExchangeRates } from '../../hooks';
 import { getAuthLogin } from '../../store/auth';
+import { getFilledMonth } from '../../store/filled-months';
 
 export const Dashboard = ({}) => {
+  const filledMonth = useSelector(getFilledMonth);
+
   const { data, error, isLoading } = useExchangeRates();
   const login = useSelector(getAuthLogin);
 
   return (
     <section className="pt-[20px]">
-      <Container>
+      <Container className="flex flex-col gap-5">
         <div className="flex flex-wrap items-center justify-center w-full gap-3 mb-3 sm:justify-between md:flex-nowrap">
           <Greeting login={login} />
 
@@ -34,7 +36,8 @@ export const Dashboard = ({}) => {
             />
           </div>
         </div>
-        <FormMonthlyFinancials />
+
+        <DetailedBalance filledMonth={filledMonth} />
       </Container>
     </section>
   );

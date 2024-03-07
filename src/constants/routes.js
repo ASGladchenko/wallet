@@ -4,5 +4,7 @@ export const routes = {
   dashboard: {
     index: '/dashboard',
     instruction: 'instruction',
+    create: 'create',
+    edit: 'edit/:month',
   },
 };
