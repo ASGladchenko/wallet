@@ -24,7 +24,8 @@ export const BalanceMonth = ({
     revenues: revenues,
   });
 
-  const { main, editDelete, link, deleteBtn, row, maxW } = getStyles();
+  const { main, editDelete, link, deleteBtn, row, maxW, balance } =
+    getStyles(balanceUAH);
 
   const onDelete = () => {
     dispatch(deleteMonth(month));
@@ -36,27 +37,9 @@ export const BalanceMonth = ({
       <td className={main}>{month}</td>
       <td className={main}>{revenues}</td>
       <td className={main}>{expenses}</td>
-      <td
-        className={clsx(main, {
-          'text-rose-600': balanceUAH < 0,
-        })}
-      >
-        {balanceUAH}
-      </td>
-      <td
-        className={clsx(main, {
-          'text-rose-600': balanceUSD < 0,
-        })}
-      >
-        {balanceUSD}
-      </td>
-      <td
-        className={clsx(main, {
-          'text-rose-600': balanceEUR < 0,
-        })}
-      >
-        {balanceEUR}
-      </td>
+      <td className={`${main} ${balance}`}>{balanceUAH}</td>
+      <td className={`${main} ${balance}`}>{balanceUSD}</td>
+      <td className={`${main} ${balance}`}>{balanceEUR}</td>
       <td className={editDelete}>
         <Link to={`edit/${month.toLowerCase()}`} className="flex">
           <Edit width={24} height={32} className={link} />

@@ -9,8 +9,8 @@ export const balanceCalculation = ({
   const eur = balance / rateEUR;
 
   return {
-    balanceUAH: balance,
-    balanceUSD: rateUSD ? usd : 0,
-    balanceEUR: rateEUR ? eur : 0,
+    balanceUAH: balance.toFixed(2),
+    balanceUSD: rateUSD ? usd.toFixed(2) : 0,
+    balanceEUR: rateEUR ? eur.toFixed(2) : 0,
   };
 };
