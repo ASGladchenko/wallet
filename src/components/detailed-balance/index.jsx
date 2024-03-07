@@ -10,7 +10,6 @@ import { getCurrency } from '../../store/currency';
 export const DetailedBalance = ({ filledMonth }) => {
   const { usd, eur } = useSelector(getCurrency);
   const isEmptyData = filledMonth.length === 0;
-  console.log(isEmptyData);
 
   return (
     <div className="w-full p-4 overflow-x-auto rounded-md shadow-lg scroll bg-zinc-300">

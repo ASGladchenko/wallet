@@ -15,3 +15,4 @@ export { Select } from './select';
 export { SelectField } from './select-field';
 export { Summary } from './summary';
 export { UnProtectedRoute } from './unprotected-route';
+export { showMessage } from './show-message';
