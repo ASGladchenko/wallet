@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Edit from '../../../assets/edit.svg?react';
 import Delete from '../../../assets/delete.svg?react';
 import { deleteMonth } from '../../../store/filled-months';
+import { balanceCalculation } from '../../../helpers';
 
 export const BalanceMonth = ({
   eur,
@@ -14,10 +15,12 @@ export const BalanceMonth = ({
   revenues,
 }) => {
   const dispatch = useDispatch();
-
-  const balanceUAH = revenues - expenses;
-  const balanceUSD = usd ? balanceUAH / usd : 0;
-  const balanceEUR = eur ? balanceUAH / eur : 0;
+  const { balanceEUR, balanceUAH, balanceUSD } = balanceCalculation({
+    rateUSD: usd,
+    rateEUR: eur,
+    expenses: expenses,
+    revenues: revenues,
+  });
 
   const onDelete = () => {
     dispatch(deleteMonth(month));
