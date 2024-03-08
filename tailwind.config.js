@@ -17,6 +17,8 @@ export default {
       backgroundImage: {
         primary:
           'linear-gradient(90deg, rgba(3,85,25,1) 0%, rgba(161,124,2,1) 100%);',
+        error:
+          'linear-gradient(117deg, rgba(54,0,24,1) 0%, rgba(161,26,2,1) 100%);',
       },
       dropShadow: {
         white: '0 2px 1px rgba(250, 250, 250, 0.6)',

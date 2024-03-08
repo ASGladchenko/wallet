@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
 } from '../pages';
 import { ProtectedRoute, UnProtectedRoute } from '../components';
+import { InfoPage } from '../pages/info-page';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       </UnProtectedRoute>
     ),
     errorElement: <ErrorPage />,
+  },
+  {
+    path: routes.instruction,
+    element: <InfoPage />,
   },
   {
     path: routes.login,
@@ -39,7 +44,6 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, element: <Dashboard /> },
-      { path: routes.dashboard.instruction, element: <h1>Instruction</h1> },
       { path: routes.dashboard.create, element: <CreatePage /> },
       { path: routes.dashboard.edit, element: <EditPage /> },
     ],

@@ -4,8 +4,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
 body {
+  @apply bg-zinc-800 scroll-body;
+}
+
+.scroll-body::-webkit-scrollbar {
+  @apply w-[12px];
+}
+
+.scroll-body::-webkit-scrollbar-track {
   @apply bg-zinc-800;
+}
+
+.scroll-body::-webkit-scrollbar-thumb {
+  @apply border-[8px] border-transparent border-solid lg:border-4 bg-zinc-300 rounded-xl bg-clip-content;
+}
+
+.scroll-body::-webkit-scrollbar-thumb:hover {
+  @apply border-2 bg-zinc-300;
 }
 
 .scroll::-webkit-scrollbar {

@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 
+import { BtnInformation, Logo } from '../../components';
 import { routes } from '../../constants';
-import { Logo } from '../../components';
 
 export const HomePage = () => {
   return (
-    <section className="flex flex-col gap-[140px] w-full h-screen items-center">
+    <section className="-translate-y-[10%] flex flex-col gap-[60px] w-full h-screen items-center justify-center">
       <Logo />
 
+      <BtnInformation />
+
       <Link
-        className="max-w-max text-zinc-500 font-bold text-2xl p-5 border border-zinc-500 hover:text-zinc-800 hover:border-zinc-800 hover:bg-zinc-500 transition-all duration-300"
+        className="p-5 text-2xl font-bold transition-all duration-300 border max-w-max text-zinc-500 border-zinc-500 hover:text-zinc-800 hover:border-zinc-800 hover:bg-zinc-500"
         to={routes.login}
       >
         Sign In
