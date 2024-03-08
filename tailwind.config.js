@@ -10,6 +10,7 @@ export default {
       colors: {
         accent: 'rgba(3,85,25,1)',
         second: 'rgba(161,124,2,1)',
+        overlay: 'rgba(173,173,173,0.2);',
       },
       fontFamily: {
         kode: ['"Kode Mono"', 'monospace'],

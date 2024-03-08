@@ -12,18 +12,17 @@ export const Logo = ({ sm }) => {
       navigate(routes.dashboard.index);
     }
 
-    return;
+    navigate(routes.home);
   };
   return (
     <h1
       translate="no"
       onClick={onClick}
       className={clsx(
-        'bg-primary drop-shadow-white font-kode font-extrabold text-center select-none text-transparent bg-clip-text',
+        'bg-primary drop-shadow-white font-kode font-extrabold text-center select-none text-transparent bg-clip-text cursor-pointer',
         {
           'text-[32px] md:text-[68px]': sm,
           'text-[68px] sm:text-[112px] xl:text-[164px] ': !sm,
-          'cursor-pointer': isAuth,
         },
       )}
     >
