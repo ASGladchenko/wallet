@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import About from '../../assets/about.svg?react';
+import About from '@/assets/about.svg?react';
 
 export const BtnInformation = ({}) => {
   return (

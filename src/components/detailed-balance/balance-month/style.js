@@ -13,4 +13,7 @@ export const getStyles = (balance) => ({
     'text-rose-600': balance < 0,
     'text-green-900': balance > 0,
   }),
+  msgContainer:
+    'absolute flex flex-col gap-5 p-6 text-2xl text-center -translate-x-1/2 -translate-y-1/2 border rounded-md cursor-pointer top-1/2 left-1/2 bg-zinc-500 border-zinc-900 font-kode text-rose-800',
+  btnWrapper: 'flex items-center justify-between gap-5',
 });

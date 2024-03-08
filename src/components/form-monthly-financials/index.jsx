@@ -1,10 +1,13 @@
 import { Form, Formik } from 'formik';
 
-import { Button, SelectField, InputField } from '../';
+import { Button, InputField, SelectField } from '..';
 
+import { getStyles } from './style';
 import { validationSchema } from './config';
 
 export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
+  const { wrapper, title, fieldContainer } = getStyles();
+
   return (
     <Formik
       onSubmit={onSubmit}
@@ -14,11 +17,10 @@ export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
       initialValues={initialState}
       validationSchema={validationSchema}
     >
-      <Form className="flex flex-col w-full gap-5 px-2 py-5 rounded bg-zinc-300">
-        <h1 className="text-center text-md md:text-xl xl:text-2xl font-kode text-zinc-900">
-          Set expenses for the month
-        </h1>
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
+      <Form className={wrapper}>
+        <h1 className={title}>Set expenses for the month</h1>
+
+        <div className={fieldContainer}>
           <SelectField
             name="month"
             options={options}
@@ -26,6 +28,7 @@ export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
             placeholder="choose month"
             className="order-3 md:-order-1"
           />
+
           <InputField
             type="number"
             name="revenues"

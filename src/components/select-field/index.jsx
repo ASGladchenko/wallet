@@ -1,6 +1,6 @@
 import { Field } from 'formik';
 
-import { Select } from '../select';
+import { Select } from '..';
 
 export const SelectField = ({ name, selected, ...rest }) => {
   return (

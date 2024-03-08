@@ -1,4 +1,5 @@
-import { exchangeUrls } from '../../constants';
+import { exchangeUrls } from '@/constants';
+
 import { setCurrency } from '../currency';
 
 export const getCurrencyThunk =

@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import { Navigate } from 'react-router-dom';
 
-import { routes } from '../../constants';
+import { routes } from '@/constants';
 
 export const ProtectedRoute = ({ children }) => {
   const isAuth = Cookies.get('TOKEN');

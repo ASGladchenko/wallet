@@ -1,6 +1,6 @@
 import { Field } from 'formik';
 
-import { Input } from '../input';
+import { Input } from '..';
 
 export const InputField = ({ name, type, ...rest }) => {
   return (
@@ -12,6 +12,7 @@ export const InputField = ({ name, type, ...rest }) => {
           await form.setFieldValue(name, newValue);
           form.setFieldTouched(name);
         };
+
         return (
           <Input
             {...rest}

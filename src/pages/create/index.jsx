@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { routes } from '../../constants';
-import { allMonths, initialStateEditCreate } from '../../config';
-import { Container, FormMonthlyFinancials } from '../../components';
-import { addedNewMonth, getFilledMonth } from '../../store/filled-months';
+import { allMonths, routes } from '@/constants';
+import { initialStateEditCreate } from '@/config';
+import { Container, FormMonthlyFinancials } from '@/components';
+import { addedNewMonth, getFilledMonth } from '@/store/filled-months';
 
 import { filterMonth } from './helpers';
 

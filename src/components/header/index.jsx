@@ -1,13 +1,17 @@
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
-import { BtnInformation, Container, Logo } from '../';
-import Exit from '../../assets/exit.svg?react';
+import { routes } from '@/constants';
+import Exit from '@/assets/exit.svg?react';
 
-import { routes } from '../../constants';
+import { BtnInformation, Container, Logo } from '..';
+
+import { getStyles } from './style';
 
 export const Header = () => {
   const navigate = useNavigate();
+
+  const { header, container, exit } = getStyles();
 
   const onClick = () => {
     Cookies.remove('TOKEN');
@@ -16,18 +20,13 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed w-full py-3 border-b bg-zinc-800 border-zinc-600 drop-shadow-xl">
-      <Container className="px-4 min-[1600px]:max-w-[1460px]  min-[1600px]:mx-auto flex items-center justify-between ">
+    <header className={header}>
+      <Container className={container}>
         <Logo sm />
 
         <BtnInformation />
 
-        <Exit
-          width={48}
-          height={48}
-          onClick={onClick}
-          className="transition-all duration-300 cursor-pointer drop-shadow-white-1/2 text-zinc-500 hover:text-rose-900"
-        />
+        <Exit width={48} height={48} onClick={onClick} className={exit} />
       </Container>
     </header>
   );
