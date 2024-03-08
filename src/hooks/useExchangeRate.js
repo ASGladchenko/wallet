@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getCurrencyThunk } from '../store/thunks';
+import { getCurrencyThunk } from '@/store/thunks';
 
 export const useExchangeRates = () => {
   const dispatch = useDispatch();

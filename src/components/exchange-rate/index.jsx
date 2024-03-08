@@ -1,4 +1,4 @@
-import { Loader } from '../';
+import { Loader } from '..';
 
 export const ExchangeRate = ({ isLoading, error, data }) => {
   return (

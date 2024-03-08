@@ -1,3 +1,3 @@
 export { exchangeUrls } from './exchangeUrl';
-export { monthOrder } from './monthOrder';
+export { monthOrder, allMonths } from './monthOrder';
 export { routes } from './routes';

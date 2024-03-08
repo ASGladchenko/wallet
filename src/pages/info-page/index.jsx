@@ -1,4 +1,4 @@
-import { Container, Logo } from '../../components';
+import { Container, Logo } from '@/components';
 
 import { InfoBlock } from './info-block';
 import { applicationSteps, technologiesUsed } from './config';

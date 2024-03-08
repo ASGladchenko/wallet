@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { routes } from '../../constants';
-import { ErrorPage } from '../error-page';
-import { allMonths, initialStateEditCreate } from '../../config';
-import { Container, FormMonthlyFinancials } from '../../components';
-import { editMonth, getFilledMonth } from '../../store/filled-months';
+import { allMonths, routes } from '@/constants';
+import { initialStateEditCreate } from '@/config';
+import { Container, FormMonthlyFinancials } from '@/components';
+import { editMonth, getFilledMonth } from '@/store/filled-months';
+
+import { ErrorPage } from '..';
 
 export const EditPage = ({}) => {
   const dispatch = useDispatch();

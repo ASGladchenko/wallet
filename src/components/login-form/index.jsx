@@ -3,15 +3,19 @@ import { Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { routes } from '../../constants';
-import { setAuthLogin } from '../../store/auth';
-import { InputField, Button, showMessage } from '../';
+import { routes } from '@/constants';
+import { setAuthLogin } from '@/store/auth';
 
+import { InputField, Button, showMessage } from '..';
+
+import { getStyles } from './style';
 import { initialState, validationSchema } from './config';
 
 export const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { wrapper, form, title } = getStyles();
 
   const onSubmit = (values) => {
     const isAuth = values.login === 'root' && values.password === '1234567890';
@@ -28,21 +32,21 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="w-full max-w-[80%] lg:max-w-[50%] xl:max-w-[40%]">
+    <div className={wrapper}>
       <Formik
         onSubmit={onSubmit}
         initialValues={initialState}
         validationSchema={validationSchema}
       >
-        <Form className="flex flex-col gap-5 rounded-md p-7 bg-zinc-300">
-          <h1 className="text-[48px] font-kode text-center font-extrabold w-full">
-            Sing in
-          </h1>
+        <Form className={form}>
+          <h1 className={title}>Sing in</h1>
+
           <InputField
             name="login"
             placeholder="Enter your login"
             label="Login"
           />
+
           <InputField
             name="password"
             type="password"

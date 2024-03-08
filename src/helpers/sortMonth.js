@@ -1,4 +1,4 @@
-import { monthOrder } from '../constants';
+import { monthOrder } from '@/constants';
 
 export const sortMonth = (a, b) => {
   const monthA = monthOrder.indexOf(a.month);

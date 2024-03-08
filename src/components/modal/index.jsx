@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import { useOutsideClick } from '../../hooks';
+import { useOutsideClick } from '@/hooks';
 
 export const Modal = ({ isOpen, setClose, children, childRef }) => {
   const [isTouched, setIsTouched] = useState(false);

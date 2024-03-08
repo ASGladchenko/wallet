@@ -6,10 +6,12 @@ import {
   Container,
   ExchangeRate,
   DetailedBalance,
-} from '../../components';
-import { useExchangeRates } from '../../hooks';
-import { getAuthLogin } from '../../store/auth';
-import { getFilledMonth } from '../../store/filled-months';
+} from '@/components';
+import { useExchangeRates } from '@/hooks';
+import { getAuthLogin } from '@/store/auth';
+import { getFilledMonth } from '@/store/filled-months';
+
+import { getStyles } from './style';
 
 export const Dashboard = ({}) => {
   const filledMonth = useSelector(getFilledMonth);
@@ -17,10 +19,12 @@ export const Dashboard = ({}) => {
   const { data, error, isLoading } = useExchangeRates();
   const login = useSelector(getAuthLogin);
 
+  const { wrapper } = getStyles();
+
   return (
     <section className="pt-[20px]">
       <Container className="flex flex-col gap-5">
-        <div className="flex flex-wrap items-center justify-center w-full gap-3 mb-3 sm:justify-between md:flex-nowrap">
+        <div className={wrapper}>
           <Greeting login={login} />
 
           <div className="flex gap-5">

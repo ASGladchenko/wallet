@@ -19,8 +19,7 @@ export const Input = ({
   const { currentType, switcher } = SwitchPassword(isTypePassword);
   const changingType = isTypePassword ? currentType : type;
 
-  const { input, labelStyle } = getStyles({
-    label: !!label,
+  const { input, wrapper, labelStyle } = getStyles({
     error: !!error,
     isActive: isActive,
     disabled: disabled,
@@ -29,12 +28,9 @@ export const Input = ({
 
   return (
     <div className={`w-full ${className} group`}>
-      {label && (
-        <span className="text-sm text-zinc-600 group:hover:text-rose-500">
-          {label}
-        </span>
-      )}
-      <label className={labelStyle}>
+      {label && <span className={labelStyle}>{label}</span>}
+
+      <label className={wrapper}>
         <input
           value={value}
           className={input}

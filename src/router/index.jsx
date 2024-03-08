@@ -1,17 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { routes } from '../constants';
+import { routes } from '@/constants';
 import {
   EditPage,
   HomePage,
+  InfoPage,
   Dashboard,
   ErrorPage,
   LoginPage,
   CreatePage,
   LayoutDashboard,
-} from '../pages';
-import { ProtectedRoute, UnProtectedRoute } from '../components';
-import { InfoPage } from '../pages/info-page';
+} from '@/pages';
+import { ProtectedRoute, UnProtectedRoute } from '@/components';
 
 export const router = createBrowserRouter([
   {
