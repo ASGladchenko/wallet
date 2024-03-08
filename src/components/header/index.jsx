@@ -1,9 +1,8 @@
 import Cookies from 'js-cookie';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { Container, Logo } from '../';
+import { BtnInformation, Container, Logo } from '../';
 import Exit from '../../assets/exit.svg?react';
-import About from '../../assets/about.svg?react';
 
 import { routes } from '../../constants';
 
@@ -21,13 +20,7 @@ export const Header = () => {
       <Container className="px-4 min-[1600px]:max-w-[1460px]  min-[1600px]:mx-auto flex items-center justify-between ">
         <Logo sm />
 
-        <Link to={routes.dashboard.instruction}>
-          <About
-            width={48}
-            height={48}
-            className="text-blue-800 transition-all duration-300 cursor-pointer hover:text-blue-500"
-          />
-        </Link>
+        <BtnInformation />
 
         <Exit
           width={48}

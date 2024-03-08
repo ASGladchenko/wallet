@@ -18,7 +18,7 @@ export const EditPage = ({}) => {
     ({ name }) => name.toLocaleLowerCase() === activeMonth,
   );
 
-  if (options.length === 0) {
+  if (options.length === 0 || filledMonth.length === 0) {
     return <ErrorPage />;
   }
 

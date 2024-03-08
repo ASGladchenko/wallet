@@ -3,6 +3,7 @@ export { Container } from './container';
 export { DetailedBalance } from './detailed-balance';
 export { ExchangeRate } from './exchange-rate';
 export { FormMonthlyFinancials } from './form-monthly-financials';
+export { BtnInformation } from './btn-information';
 export { Greeting } from './greeting';
 export { Header } from './header';
 export { Input } from './input';

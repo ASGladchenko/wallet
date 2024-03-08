@@ -34,14 +34,19 @@ export const LoginForm = () => {
         initialValues={initialState}
         validationSchema={validationSchema}
       >
-        <Form className="flex flex-col gap-5 p-7 bg-zinc-300">
+        <Form className="flex flex-col gap-5 rounded-md p-7 bg-zinc-300">
           <h1 className="text-[48px] font-kode text-center font-extrabold w-full">
             Sing in
           </h1>
-          <InputField name="login" placeholder="Enter your login" />
+          <InputField
+            name="login"
+            placeholder="Enter your login"
+            label="Login"
+          />
           <InputField
             name="password"
             type="password"
+            label="Password"
             placeholder="Enter your password"
           />
           <Button text="Enter" type="submit" className="max-w-[50%] self-end" />

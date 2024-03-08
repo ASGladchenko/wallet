@@ -27,7 +27,7 @@ export const Summary = ({ usd, eur, filledMonth }) => {
       <h1 className="w-full text-xl font-bold text-center font-kode text-zinc-600">
         Your financial savings
       </h1>
-      <div className="flex items-center justify-center w-full gap-5">
+      <div className="flex flex-col items-center justify-center w-full gap-5 min-[420px]:flex-row">
         <Block currency="UAH" balance={balanceUAH} />
         <Block currency="USD" balance={balanceUSD} />
         <Block currency="EUR" balance={balanceEUR} />

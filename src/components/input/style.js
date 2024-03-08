@@ -1,7 +1,14 @@
 import clsx from 'clsx';
 
-export const getStyles = ({ isPassword, isActive, disabled, error }) => ({
-  label: clsx(
+export const getStyles = ({
+  error,
+  label,
+  isActive,
+  disabled,
+  isPassword,
+}) => ({
+  wrapper: clsx(''),
+  labelStyle: clsx(
     'flex flex-col relative w-full p-1 border border-1 transition-all duration-300',
     {
       'pr-7': isPassword,

@@ -18,23 +18,25 @@ export const FormMonthlyFinancials = ({ options, initialState, onSubmit }) => {
         <h1 className="text-center text-md md:text-xl xl:text-2xl font-kode text-zinc-900">
           Set expenses for the month
         </h1>
-        <div className="flex items-start justify-between gap-2">
+        <div className="flex flex-col items-start justify-between gap-4 md:flex-row">
           <SelectField
             name="month"
             options={options}
+            label="Choose a month"
             placeholder="choose month"
+            className="order-3 md:-order-1"
           />
           <InputField
             type="number"
             name="revenues"
-            className="max-w-[35%]"
+            label="Your revenues"
             placeholder="revenues UAH"
           />
 
           <InputField
             type="number"
             name="expenses"
-            className="max-w-[35%]"
+            label="Your expenses"
             placeholder="expenses UAH"
           />
         </div>

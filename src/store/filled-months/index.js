@@ -3,18 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { sortMonth } from '../../helpers/sortMonth';
 
 const filledMonthInitialState = {
-  filled: [
-    {
-      month: 'January',
-      expenses: '18000',
-      revenues: '24000',
-    },
-    {
-      month: 'December',
-      expenses: '51000',
-      revenues: '38000',
-    },
-  ],
+  filled: [],
 };
 
 const filledMonthSlice = createSlice({
@@ -52,3 +41,14 @@ export {
   getFilledMonth,
   filledMonthReducer,
 };
+
+// {
+//   month: 'January',
+//   expenses: '18000',
+//   revenues: '24000',
+// },
+// {
+//   month: 'December',
+//   expenses: '51000',
+//   revenues: '38000',
+// },

@@ -1,9 +1,9 @@
 export const routes = {
   home: '/',
   login: '/login',
+  instruction: 'info',
   dashboard: {
     index: '/dashboard',
-    instruction: 'instruction',
     create: 'create',
     edit: 'edit/:month',
   },

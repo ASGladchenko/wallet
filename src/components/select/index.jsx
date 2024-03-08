@@ -1,13 +1,15 @@
 import { useRef, useState } from 'react';
 import clsx from 'clsx';
+
 import { useOutsideClick } from '../../hooks';
 
 export const Select = ({
   value,
-  disabled,
-  options,
-  onChange,
+  label,
   error,
+  options,
+  disabled,
+  onChange,
   className,
 }) => {
   const ref = useRef(null);
@@ -33,6 +35,11 @@ export const Select = ({
 
   return (
     <div className={clsx('w-full', className)}>
+      {label && (
+        <span className="text-sm text-zinc-600 group:hover:text-rose-500">
+          {label}
+        </span>
+      )}
       <div
         ref={ref}
         onClick={onClick}
